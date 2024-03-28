@@ -5,7 +5,7 @@ import m as main1
 import string 
 import car_details as cd
 from difflib import SequenceMatcher
-import webbrowser
+
 import json
 # Creating a Flask app instance
 app = Flask(__name__)
