@@ -29,7 +29,7 @@ def photos_get():
         print("none")
         return "None",chat.history
     else:
-        photos_link = search_google(response.text)
+        photos_link = search_google(response.text+" car")
         return photos_link ,chat.history
 
 
