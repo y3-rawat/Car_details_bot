@@ -1,6 +1,5 @@
 key = "AIzaSyD3kNDlEpRsF-Mb14oQfZNaqPF6ECnvKrA"
-from IPython.display import display
-from IPython.display import Markdown
+
 import pathlib
 import textwrap
 
