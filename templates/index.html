@@ -605,23 +605,33 @@ input[type="email"]:focus {
                                 
                             </div>
                             <div class="ab">
-                              <form id="myForm" class="aa" autocomplete="off">
-                                <input type="text" id="textInput" name="msg" class="cc" placeholder="Type your message here..."  />
-                                <button type="submit" class="btn ba" aria-label="submit">
+                              <form id="myForm" class="aa" autocomplete="off" onsubmit="enableTellMeMoreButton()">
+                                <input type="text" id="textInput" name="msg" class="cc" placeholder="Type your message here..." />
+                                  <button type="submit" id="submitButton" class="btn ba" aria-label="submit">
                                   <span>Enter</span>
-                                  <ion-icon name="send"  height="20" width="20" style="margin-bottom: -3px;"></ion-icon>
-
-                                  
-                                </button>
+                                  <ion-icon name="send" height="20" width="20" style="margin-bottom: -3px;"></ion-icon>
+                                  </button>
                                 <button id="microphoneButton" class="btn" type="button" style="height: 40px; width: 40px; margin-top: 12px ; margin-left: 5px;" >
                                   <img class="mic" src="/static/mic.svg" alt=""></button>
                                 <svg id="activeIndicator" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" style="display: none;">
                                   <circle cx="10" cy="10" r="8" fill="green" />
                                 </svg> 
-                                <button id="pythonFunctionButton" href="/redirect_to_second" class=" bb btn btn-primary btn-block mt-2">Tell me more</button>
+                                <button id="pythonFunctionButton" href="/redirect_to_second" class="bb btn btn-primary btn-block mt-2" disabled>Tell me more</button>
                               </form>
                               
                               <script>
+                                // Get the input field and button elements
+const textInput = document.getElementById('textInput');
+const submitButton = document.getElementById('submitButton');
+const pythonFunctionButton = document.getElementById('pythonFunctionButton');
+
+// Function to enable the "Tell me more" button
+function enableTellMeMoreButton() {
+  pythonFunctionButton.disabled = false;
+}
+
+
+
                                 const form = document.getElementById('myForm');
                                 const inputField = document.getElementById('textInput');
                                 const microphoneButton = document.getElementById('microphoneButton');
