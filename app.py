@@ -36,8 +36,8 @@ def redirect_to_second():
 def second_page():
     res,history = cd.photos_get()
     if "None" in res:
-        print("did'nt get the name of car")
-        return render_template("next_page.html",links= json.dumps(res) )
+        
+        return render_template("next_page.html",links= "did'nt get the name of car") 
    
     return render_template("next_page.html" ,links= json.dumps(res))
 
