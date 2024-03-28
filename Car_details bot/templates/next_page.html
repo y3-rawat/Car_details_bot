@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery</title>
+<style>
+    .gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 5px;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<h1>Photo Gallery</h1>
+<p>{{res}}</p>
+<div id="gallery" class="gallery"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Directory path
+        // Carbot\templates\di
+        var dir = "di/";
+
+        // Array to store image file names
+        var images = [];
+
+        // Fetch images from the directory
+        fetchImages();
+
+        function fetchImages() {
+            fetch(dir)
+                .then(response => response.text())
+                .then(data => {
+                    // Extract image file names from the directory listing
+                    var parser = new DOMParser();
+                    var htmlDoc = parser.parseFromString(data, 'text/html');
+                    var links = htmlDoc.querySelectorAll("a");
+                    links.forEach(link => {
+                        var href = link.getAttribute("href");
+                        if (isImage(href)) {
+                            images.push(href);
+                        }
+                    });
+
+                    // Display images
+                    displayImages();
+                })
+                .catch(error => console.log(error));
+        }
+
+        function isImage(filename) {
+            return /\.(jpg|png|gif)$/i.test(filename);
+        }
+
+        function displayImages() {
+            var galleryDiv = document.getElementById("gallery");
+            images.forEach(image => {
+                var imgElement = document.createElement("img");
+                // Remove dir from image path since it's already in the href
+                imgElement.src = image;
+                imgElement.alt = image;
+                galleryDiv.appendChild(imgElement);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
