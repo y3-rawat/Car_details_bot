@@ -11,9 +11,6 @@ model = genai.GenerativeModel('gemini-pro')
 chat = model.start_chat(history=[])
 
 
-def to_markdown(text):
-    
-    return text
 
 def others(text):
     tex =f""" you are in a conversational bot on a car website here is a user text -> {text} 
