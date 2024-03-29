@@ -12,8 +12,9 @@ app = Flask(__name__)
 first_time = True
 
 def get_response(chatbot, user_input):
+    print("User Input:", user_input)  # Add this line for debugging
+
     
-    """Returns the response from the chatbot based on the user's input."""
     user_input = user_input.lower().translate(str.maketrans('', '', string.punctuation))
     max_similarity = 0
     best_match = None
