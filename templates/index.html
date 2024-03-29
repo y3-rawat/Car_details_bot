@@ -734,6 +734,7 @@ function enableTellMeMoreButton() {
                 userText = formatTextWithAsterisks(userText);
         
                 let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+                console.log(userText)
                 $("#textInput").val("");
                 $("#chatbox").append(userHtml);
                 $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 1000);
