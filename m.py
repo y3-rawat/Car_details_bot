@@ -14,6 +14,19 @@ sm = {
         "question": "who are you",
         "answer": "I am Car Chatbot"
       },
+       {
+        "question": "ok",
+        "answer": "👍"
+      },{
+        "question": "oky",
+        "answer": "👍"
+      },{
+        "question": "okey",
+        "answer": "👍"
+      },{
+        "question": "okai",
+        "answer": "👍"
+      },
       {
         "question": "What is your name?",
         "answer": "I don't have any name yet but you can call me just chatbot."
