@@ -5,12 +5,13 @@ import m as main1
 import string 
 import car_details as cd
 from difflib import SequenceMatcher
+from flask_cors import CORS
 
 import json
 # Creating a Flask app instance
 app = Flask(__name__)
 first_time = True
-
+CORS(app, resources={r"/*": {"origins": ['http://localhost:3000', 'https://eurotechxchange.com/']}})
 def get_response(chatbot, user_input):
     print("User Input:", user_input)  # Add this line for debugging
 
