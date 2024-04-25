@@ -13,8 +13,8 @@ chat = model.start_chat(history=[])
 
 
 def others(text):
-    tex =f"""you are in a conversational bot on a car website here is a user text -> {text} 
-    answer him in less then 100 words and only about the cars 
+    tex =f"""you are in a conversational bot on a car website called Eurotech here is a user text -> {text} 
+    answer him in less then 50 words and only about the cars 
     """
     
     response = chat.send_message(tex)
